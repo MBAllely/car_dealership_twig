@@ -29,19 +29,38 @@
           return $this->model;
       }
 
+      function setModel($new_model)
+      {
+        $this->model = $new_model;
+      }
+
       function getPrice()
       {
           return $this->price;
+      }
+
+      function setPrice($new_price)
+      {
+        $this->price = $new_price;
       }
 
       function getImage()
       {
           return $this->image;
       }
+      function setImage($new_image)
+      {
+        $this->image = $new_image;
+      }
 
       function getMiles()
       {
           return $this->miles;
+      }
+
+      function setMiles($new_miles)
+      {
+        $this->miles = $new_miles;
       }
   }
   $porsche = new Car("2014 Porsche 911", 114991, "img/porsche.jpg", 7864);
