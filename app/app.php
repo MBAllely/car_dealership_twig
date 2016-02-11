@@ -27,11 +27,12 @@
 
     $app->get("/results", function() use ($app) {
         $user_price = intval($_GET['user_price']);
+        $user_miles = intval($_GET['user_miles']);
         $cars = $_SESSION['cars'];
         $cars_matching_search = array();
 
         foreach ($cars as $car) {
-            if ($car->worthBuying($user_price)) {
+            if ($car->worthBuying($user_price) && $car->maxMileage($user_miles)) {
                 (array_push($cars_matching_search, $car));
             }
         }
