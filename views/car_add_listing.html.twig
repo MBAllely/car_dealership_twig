@@ -7,18 +7,22 @@
 <body>
     <div class="container">
         <h1>List a Car!</h1>
-        <form action="/results" method="post">
+        <form action="/new_listing" method="post">
             <div class="form-group">
-                <label for="miles">Enter Maximum Mileage:</label>
-                <input id="miles" name="miles" class="form-control" type="number">
+                <label for="user_model">Enter Make and Model:</label>
+                <input id="user_model" name="user_model" class="form-control" type="text">
             </div>
             <div class="form-group">
-                <label for="price">Enter Price:</label>
-                <input id="price" name="price" class="form-control" type="number">
+                <label for="user_price">Enter Price:</label>
+                <input id="user_price" name="user_price" class="form-control" type="number">
             </div>
             <div class="form-group">
-                <label for="miles">Enter Maximum Mileage:</label>
-                <input id="miles" name="miles" class="form-control" type="number">
+                <label for="user_miles">Enter Maximum Mileage:</label>
+                <input id="user_miles" name="user_miles" class="form-control" type="number">
+            </div>
+            <div class="form-group">
+                <label for="user_image">Enter image URL:</label>
+                <input id="user_image" name="user_image" class="form-control" type="text">
             </div>
             <button type="submit" class="btn-success">Submit</button>
         </form>

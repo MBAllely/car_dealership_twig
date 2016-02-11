@@ -22,7 +22,7 @@
 
 
     $app->get("/", function() use ($app) {
-        return $app['twig']->render('car_dealership_form.html.twig');
+        return $app['twig']->render('car_dealership_form.html.twig', array('cars' => Car::getAll()));
     });
 
     $app->get("/results", function() use ($app) {
@@ -37,6 +37,21 @@
             }
         }
         return $app['twig']->render('car_search_results.html.twig',  array('matching_cars' => $cars_matching_search));
+    });
+
+    $app->get("/add_listing", function() use ($app) {
+        return $app['twig']->render('car_add_listing.html.twig');
+    });
+
+    $app->post("/new_listing", function() use ($app) {
+        $new_car = new Car($_POST['user_model'], $_POST['user_price'], $_POST['user_image'], $_POST['user_miles']);
+        $new_car->save();
+        return $app['twig']->render('new_listing.html.twig', array('new_car' => $new_car));
+    });
+
+    $app->post("/delete", function() use ($app) {
+        Car::deleteAll();
+        return $app['twig']->render('delete.html.twig');
     });
 
     return $app;

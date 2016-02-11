@@ -2,6 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css" media="all">
     <title>Find a Car</title>
 </head>
 <body>
@@ -18,6 +19,23 @@
             </div>
             <button type="submit" class="btn-success">Submit</button>
         </form>
+
+        <a href="/add_listing">Add A Listing</a>
+        <form action='/delete' method='post'>
+            <button type='submit'>Clear</button>
+        </form>
+
+        <h1>Our Inventory</h1>
+        <ul>
+           {% for car in cars %}
+               <h4>{{ car.getModel}}</h4>
+               <ul>
+                   <li>Mileage: {{ car.getMiles}}</li>
+                   <li>Price: {{ car.getPrice}}</li>
+                   <li><img src="{{car.getImage}}" alt="{{car.getModel}}" /></li>
+               </ul>
+           {% endfor %}
+        </ul>
     </div>
 </body>
 </html>

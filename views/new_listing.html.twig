@@ -1,0 +1,13 @@
+<html>
+<head>
+    <title>New Listing</title>
+</head>
+<body>
+    <h1>You Added a New Listing!</h1>
+    <p>{{ new_car.getModel }}</p>
+    <p>{{ new_car.getPrice }}</p>
+    <p>{{ new_car.getMiles }}</p>
+    <img src="{{ new_car.getImage }}" alt="{{ new_car.getModel }}" />
+    <p><a href='/'>View Current Listings.</a></p>
+</body>
+</html>

@@ -63,9 +63,19 @@
             $this->miles = $new_miles;
         }
 
+        function save()
+        {
+            array_push($_SESSION['cars'], $this);
+        }
+
         static function getAll()
         {
             return $_SESSION['cars'];
+        }
+
+        static function deleteAll()
+        {
+            $_SESSION['cars'] = array();
         }
 
 }
